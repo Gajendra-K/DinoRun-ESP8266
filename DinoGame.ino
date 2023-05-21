@@ -82,6 +82,14 @@ const uint8_t dinoEndX = dinoBaseX + 22;
 
 
 void setup(void) {
+  tft.setCursor(tft.width() / 2 - 30, tft.height() / 5);
+  tft.print("Dino Game");
+  tft.setCursor(tft.width() / 2 - 10, tft.height() / 4 + 7);
+  tft.print("by");
+  tft.setTextSize(2);
+  tft.setCursor(tft.width() / 2 - 53, tft.height() / 3 + 15);
+  tft.print("WATT'S UP");
+  
   pinMode(JMP_BTN, INPUT);
 
   tft.initR(INITR_BLACKTAB);
@@ -106,6 +114,7 @@ void setup(void) {
     if (press == LOW) break;
     delay(10);
   }
+  tft.setTextSize(1);
   // during game start  the dino jumps and dino lands and moves little forward
 
   // start jump animation
